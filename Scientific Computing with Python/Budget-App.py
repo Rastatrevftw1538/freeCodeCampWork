@@ -47,8 +47,8 @@ def create_spend_chart(*categories):
         for i in l:
             spendingDict[i.name] = 0
             for k in i.ledger:
-            if float(k["amount"]) < 0:
-                spendingDict[i.name] = abs(k["amount"]) + spendingDict[i.name]
+                if float(k["amount"]) < 0:
+                    spendingDict[i.name] = abs(k["amount"]) + spendingDict[i.name]
     totalSpent = sum(spendingDict.values())
     for key in spendingDict:
         percentageDict[key] = (spendingDict[key]/totalSpent)*100
